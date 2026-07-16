@@ -4,5 +4,15 @@ import { BrowserRouter } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './context/AuthContext.jsx';
 import App from './App.jsx';
-import './index.css'; createRoot(document.getElementById('root')).render( <StrictMode> <BrowserRouter> <AuthProvider> <Toaster position="top-right" toastOptions={{ style: { fontSize: '14px' } }} /> <App /> </AuthProvider> </BrowserRouter> </StrictMode>
+import './index.css';
+
+createRoot(document.getElementById('root')).render(
+    <StrictMode>
+        <BrowserRouter>
+            <AuthProvider>
+                <Toaster position="top-right" toastOptions={{ style: { fontSize: '14px' } }} />
+                <App />
+            </AuthProvider>
+        </BrowserRouter>
+    </StrictMode>
 );
