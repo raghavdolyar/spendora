@@ -1,7 +1,10 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import router from './routes/auth.js';
+
+import authRoutes from './routes/auth.js';
+import categoryRoutes from './routes/category.js';
+import transactionRoutes from './routes/transaction.js';
 
 dotenv.config();
 
@@ -15,7 +18,9 @@ app.get('/', (req, res) => {
   res.json({ message: 'spendora is running' });
 });
 
-app.use('/api/auth', router);
+app.use('/api/auth', authRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/transactions', transactionRoutes);
 
 app.listen(PORT, () => {
   console.log(`server running on address http://localhost:${PORT}`);
