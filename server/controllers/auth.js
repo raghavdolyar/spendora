@@ -6,7 +6,7 @@ import { defaultCategories } from '../utils/defaultCategories.js';
 const signToken = userId => jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '7d' });
 
 export const register = async (req, res) => {
-  const { name, email, password, currency = 'INR' } = req.body;
+  const { name, email, password, currency = 'USD' } = req.body;
 
   if (!name || !email || !password) {
     return res.status(400).json({ message: 'name, email, and password are required' });

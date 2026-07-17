@@ -4,6 +4,7 @@ import {
   createBudget,
   updateBudget,
   deleteBudget,
+  analyzeBudgets,
 } from '../controllers/budget.js';
 import { protect } from '../middleware/auth.js';
 
@@ -15,5 +16,6 @@ router.get('/', getBudgets);
 router.post('/', createBudget);
 router.put('/:id', updateBudget);
 router.delete('/:id', deleteBudget);
+router.post('/analyze', analyzeBudgets);
 
 export default router;
