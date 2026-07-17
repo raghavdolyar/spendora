@@ -13,7 +13,7 @@ const pool = new Pool({
 });
 
 pool.on('connect', () => {
-  console.log('connected to neon postgres');
+  console.log('connected to neon postgres!');
 });
 
 pool.on('error', err => {
