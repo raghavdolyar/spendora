@@ -12,10 +12,6 @@ const pool = new Pool({
   ssl: { rejectUnauthorized: false },
 });
 
-pool.on('connect', () => {
-  console.log('connected to neon postgres!');
-});
-
 pool.on('error', err => {
   console.error('unexpected postgres error :', err);
   process.exit(-1);

@@ -23,6 +23,7 @@ const runMigration = async () => {
       console.log('dropping existing tables...');
       await pool.query(DROP_ALL);
     }
+    
     console.log(`reading schema from ${schemaPath}`);
     const schema = await fs.readFile(schemaPath, 'utf-8');
 
